@@ -1,6 +1,6 @@
 Name:		texlive-biblatex-sbl
 Version:	63639
-Release:	1
+Release:	2
 Summary:	Society of Biblical Literature (SBL) style files for BibLaTeX
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/biblatex-sbl
