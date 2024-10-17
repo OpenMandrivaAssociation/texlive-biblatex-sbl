@@ -3,7 +3,7 @@ Version:	71470
 Release:	1
 Summary:	Society of Biblical Literature (SBL) style files for BibLaTeX
 Group:		Publishing
-URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/biblatex-sbl
+URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/biblatex-sbl
 License:	lppl1.3
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/biblatex-sbl.r%{version}.tar.xz
 Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/biblatex-sbl.doc.r%{version}.tar.xz
