@@ -1,41 +1,34 @@
-Name:		texlive-biblatex-sbl
-Version:	71470
-Release:	1
+%global tl_name biblatex-sbl
+%global tl_revision 78850
+
+Name:		texlive-%{tl_name}
+Epoch:		1
+Version:	2.0
+Release:	%{tl_revision}.1
 Summary:	Society of Biblical Literature (SBL) style files for BibLaTeX
 Group:		Publishing
-URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/biblatex-sbl
+URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/biblatex-contrib/biblatex-sbl
 License:	lppl1.3
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/biblatex-sbl.r%{version}.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/biblatex-sbl.doc.r%{version}.tar.xz
+Source0:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/biblatex-sbl.r%{tl_revision}.tar.xz
+Source1:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/biblatex-sbl.doc.r%{tl_revision}.tar.xz
 BuildArch:	noarch
+BuildSystem:	texlive
 BuildRequires:	texlive-tlpkg
-Requires(pre):	texlive-tlpkg
-Requires(post):	texlive-kpathsea
+%texlive_base_requires
+Provides:	texlive(%{tl_name}) = %{tl_revision}
 
 %description
-The package provides BibLaTeX support for citations in the
-format specified by the second edition of the Society of
-Biblical Literature (SBL) Handbook of Style. All example notes
-and bibliography entries from the handbook are supported and
-shown in an example file. A style file for writing SBL student
-papers is also included.
+The package provides BibLaTeX support for citations in the format
+specified by the second edition of the Society of Biblical Literature
+Handbook of Style, the SBLHS Student Supplement and updates published in
+the SBLHS blog. Highlights include: Full support for every example in
+the SBL Handbook of Style 2nd ed., SBLHS Student Supplement and SBLHS
+blog. Documentation showing how to set up and cite bib entries for every
+supported example. Advanced handling of first and subsequent citations
+in running text and footnotes. Support for a variety of types of
+reprints. Comprehensive support for abbreviations, including citing
+reference works, ancient works and general abbreviations. Support for
+citing ancient works by both source division and text collection page,
+including indicating the translator if needed. German translation
+strings.
 
-%prep
-%autosetup -p1 -c -a1
-
-%build
-
-%install
-rm -rf tlpkg
-mkdir -p %{buildroot}%{_texmfdistdir}
-cp -a * %{buildroot}%{_texmfdistdir}
-
-%files
-%{_texmfdistdir}/tex/latex/biblatex-sbl
-%{_texmfdistdir}/makeindex/biblatex-sbl
-%doc %{_texmfdistdir}/doc/latex/biblatex-sbl
-
-%post -p %{_sbindir}/texlive.post
-
-%postun
-[ "$1" -eq 0 ] && %{_sbindir}/texlive.post
